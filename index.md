@@ -1,141 +1,39 @@
-<h1>linked in file for workfloe test </h1>
-# Plugin Development Training Material
+# Proposed Reporting System for Our Application
 
-**Training Academy of Penta-b®**
 
-**Copyright © 2032 Penta-b**
+ I wanted to present some options for implementing a reporting system into our application, which is based on React and Node.js. After careful consideration, I have identified several tools that could be integrated into our project:
 
----
+1. **ActiveReportsJS**:
 
-## Table of Contents
+   - **Features**: Comprehensive reporting tool with components like the React Report Viewer and Report Designer.
+   - **Advantages**: Supports client-side exporting and printing, multiple report types, and zero server dependencies.
+   - **Pricing**: Not free. Licensing options start at around $1,249 for non-commercial use and $3,999 for commercial use.
 
-1. [Introduction](#introduction)
-2. [Training Environment and Scope](#training-environment-and-scope)
-3. [Testing and Evaluation](#testing-and-evaluation)
-4. [Implementing the Plugin Story](#implementing-the-plugin-story)
-   - [Lesson Introduction](#lesson-introduction)
-   - [Settings Design](#settings-design)
-   - [Plugin Design](#plugin-design)
-   - [Exercises](#exercises)
-5. [Review Questions](#review-questions)
+2. **react-report-builder**:
 
----
+   - **Features**: Customizable reporting module with React components for filtering, sorting, and exporting reports.
+   - **Advantages**: Free to use with npm, though additional costs may apply based on specific requirements.
+   - **Pricing**: Free.
 
-## Introduction
+3. **Jikji**:
 
-This document provides the training catalog for the Plugin Development course. It outlines the necessary steps and best practices for creating a robust plugin using Penta-b’s proprietary tools and libraries.
+   - **Features**: Rich report generator with components for headers, footers, watermarks, and charts.
+   - **Advantages**: Supports client-side rendering and server-side generation, exporting to PDF, Image, or HTML.
+   - **Pricing**: Pricing information not readily available; potential cost involved.
 
-**Course Version:** 1.2  
-**Version Release Date:** March 2023  
-**Printed in Egypt.**
+4. **jsReport**:
+   - **Features**: Open-source reporting platform with support for various output formats (PDF, Excel, DOCX, HTML, CSV).
+   - **Advantages**: Includes a web-based designer, REST API, and a complete set of extensions for scheduling, templates, versioning, and more.
+   - **Pricing**: Free and open-source.
+## note :
+ ActiveReportsJS, Jikji, and jsReport all have built-in support for exporting to PDF. For react-report-builder, you may need to use additional libraries to achieve PDF export.
+## Recommendation
 
-**Important:** The information contained in this document is protected under copyright laws and must not be reproduced or transmitted in any form without explicit permission from Penta-b.
+Based on our requirements and budget considerations, I recommend exploring **jsReport** as it offers a robust set of features and is open-source, meaning no initial cost for use. Its capabilities align well with our needs for diverse output formats and ease of integration with our current technology stack.
+cons : 
+it well cost money after the first month if the reports is more than 5 .
+it can take more time to implement it in client side .
+Please let me know if you would like more details on any of these options or have any questions.
 
----
-
-## Training Environment and Scope
-
-### Training Environment
-Training will be conducted at Penta-b’s premises or at the client’s site in a classroom format.
-
-### Training Scope
-This course is designed to train:
-
-- GIS End-users (Non-Professional)
-- Professional Users
-- System Administrators
-
----
-
-## Testing and Evaluation
-
-1. **Pre-training Test:**
-   - A 30-question test to assess the qualifications of trainees.
-   - A minimum score of 24 correct answers is required to proceed.
-
-2. **Post-training Test:**
-   - A certification test to evaluate the trainee's ability to operate the system successfully.
-
----
-
-## Implementing the Plugin Story
-
-### Lesson Introduction
-The plugin we will develop has the following features:
-
-1. Interact with a layer of points.
-2. Display a grid of points showing the ID and name of each point.
-3. Zoom in, highlight, and view more details for any point.
-4. Add new points to the map dynamically.
-
-**Key Concept:** Always plan your settings and plugin design before implementation.
-
----
-
-### Settings Design
-
-The plugin will interact with a single layer of points. Configuration settings will include:
-
-1. **Single Layer Picker Field:** For selecting the layer.
-2. **Dynamic Add Form:** Using a nested designer field for flexibility.
-3. **Custom Styles:** A radio group to allow the user to select point styles (e.g., colored points or specific images).
-
-**Configuration Example:**
-- Layer Picker: Layer 1
-- Form Body: Dynamic Fields (e.g., Name, Coordinates)
-- Style Options: Colored points, Image-based points
-
----
-
-### Plugin Design
-
-The plugin’s main functionalities will include:
-
-1. Displaying points in a grid format using the **Penta-Grid** component.
-2. Enabling functions like zoom, highlight, and add buttons.
-
----
-
-### Exercises
-
-#### Exercise 3B: Reading the Settings
-
-1. Log plugin settings in `MapClick.js` using `console.log`.
-2. Inspect the settings via browser developer tools.
-
-#### Exercise 3C: Implementing the Story
-
-1. **Trigger Logic:** Implement logic in `MapClick.js` to open/close the sidebar.
-2. **Fetching Points:**
-   - Create `queryService.js` to fetch points from the database.
-   - Use `genQueryBody` and `callQueryService` functions for querying.
-3. **Drawing Points:**
-   - Add points to the map dynamically using styles defined in `mapUtils.js`.
-4. **Using Penta-Grid:**
-   - Install the grid package: `npm i @penta-b/grid`.
-   - Map features to grid properties and display in a table format.
-
-5. **Enhancements:**
-   - Add zoom, highlight, and info buttons.
-   - Add a custom “Add New Point” button to dynamically update the grid and map.
-
----
-
-## Review Questions
-
-1. **How can we read the settings in the plugin code?**
-   - Answer: Plugin settings can be found in the props of exported React components.
-
-2. **What is the action used to mount other components?**
-   - Answer: `showComponent`
-
-3. **How can we add zoom and highlight buttons to the grid?**
-   - Answer: By importing them from the component registry and adding them to the `trComponents` prop.
-
-4. **What component is used to display dynamic configurable forms?**
-   - Answer: The Form component imported from `@penta-b/ma-penta-smart-forms`.
-
----
-
-This concludes the training material. For more details, refer to the technical documentation provided by Penta-b.
-
+Best regards,  
+abdulrhman alqassas
